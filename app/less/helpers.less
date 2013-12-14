@@ -1,0 +1,97 @@
+//helpers
+.align-center {
+	text-align: center;
+}
+
+.align-left {
+	text-align: left;
+}
+
+.margin-top-lg {
+	.margin-top(25px);
+}
+
+.margin-top-md {
+	.margin-top(15px);
+}
+
+.spacer-y {
+	.spacer-y;
+}
+
+.spacer-y-lg {
+	.spacer-y(25px);
+}
+
+.padding-x {
+	.padding-x;
+}
+
+.full {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+.uppercase {
+	text-transform: uppercase;
+}
+
+
+//mixins
+.dotted-links(@color: #000, @hoverColor: #000) {
+	a {
+		text-decoration: none;
+		color: @color;
+		border-bottom: 1px dotted @color;
+		&:hover {
+			color: @hoverColor;
+			text-decoration: none;
+			border-bottom: 1px solid @hoverColor;
+		}
+	}
+	a.noDots {
+		border-bottom: 0;
+	}
+}
+.spacer-y(@margin: 10px) {
+	margin-top: @margin;
+	margin-bottom: @margin;
+}
+
+.padding-x(@padding: 10px) {
+	padding-left: @padding;
+	padding-right: @padding;
+}
+
+.rounded-corners (@radius: 5px) {
+	-webkit-border-radius: @radius;
+	-moz-border-radius: @radius;
+	-ms-border-radius: @radius;
+	-o-border-radius: @radius;
+	border-radius: @radius;
+}
+
+.transition (@transition) {
+	-webkit-transition: @transition;
+	-moz-transition: @transition;
+	-ms-transition: @transition;
+	-o-transition: @transition;
+}
+
+.transform(@string){
+	-webkit-transform: @string;
+	-moz-transform: @string;
+	-ms-transform: @string;
+	-o-transform: @string;
+}
+
+.box-shadow (@string) {
+	-webkit-box-shadow: @string;
+	-moz-box-shadow: @string;
+	box-shadow: @string;
+}
+
+.margin-top (@m: 10px) {
+	margin-top: @m;
+}

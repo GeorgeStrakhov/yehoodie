@@ -1,0 +1,124 @@
+//import bootstrap
+
+@import "../../bower_components/bootstrap/less/bootstrap.less";
+
+//import helpers
+@import "helpers.less";
+
+//variables
+@main-color: #333;
+@accent-color: #FFF;
+@bg-color: #084300;
+@text-color: #FFF;
+@default-font: 'Lato', sans-serif;
+
+//styles
+html, body {
+	.full;
+}
+body {
+	background-color: @bg-color;
+	color: @main-color;
+	font-family: @default-font;
+	.full;
+}
+
+.allContainer {
+	.dotted-links(lighten(@main-color, 50%), lighten(@main-color, 100%));
+	.full;
+	color: @text-color;
+}
+
+.sidebar {
+	background-color: #000;
+	color: lighten(@main-color, 40%);
+	@media(min-width: @screen-md){
+		.full;
+		padding: 20px;
+	}
+	padding: 30px;
+	.logo {
+		width: 50%;
+		margin: 0 auto;
+		margin-bottom: 30px;
+		@media(min-width: @screen-md) {
+			margin-top: 35px;
+		}
+	}
+	.description {
+		@media(min-width: @screen-md) {
+			padding: 10px;
+			text-align: justify;
+		}
+		line-height: 150%;
+		hr {
+			border-top: 1px dotted @main-color;
+		}
+	}
+	.subLinks {
+		font-size: 150%;
+		a {
+			margin-right: 10px;
+		}
+		a:last-of-type {
+			margin-right: 0;
+		}
+	}
+}
+
+.yehoodie-pic {
+	max-height: 100%;
+	margin: 0 auto;
+}
+
+.countdownAvailability {
+	h2 {
+		color: #FFF;
+		font-family: @default-font;
+		line-height: 140%;
+		a {
+			color: #FFF;
+		}
+	}
+}
+
+.btn-grey {
+	background-color: #AAA;
+	border-color: #AAA;
+	color: #000 !important;
+	&:hover {
+		border-color: #EEE;
+	}
+}
+
+
+// bootstrap overrides
+.modal {
+	.modal-title {
+		.align-center;
+		font-family: @default-font;
+	}
+}
+
+//browsehappy prompt
+.browsehappy {
+	margin: 0.2em 0;
+	background: #cbc;
+	color: #000;
+	font-size: 30px;
+	padding: 2em 0;
+}
+
+//addthis fixes
+.addthis_toolbox {
+	width: 144px;
+	margin: 0 auto;
+	a {
+		text-decoration: none;
+		border-bottom: none;
+		&:hover {
+			text-decoration: none;
+			border-bottom: none;
+		}
+	}
+}
