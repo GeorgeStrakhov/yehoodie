@@ -1,17 +1,18 @@
 {
-	"name": "Yehoodie.com",
-	"version": "0.0.1",
-	"authors": [
-	"George Strakhov <george.strakhov@gmail.com>"
-	],
-	"license": "MIT",
-	"private": true,
-	"ignore": [
-	"**/.*",
-	"node_modules",
-	"bower_components"
-	],
-	"dependencies": {
-		"bootstrap": "~3.0.3"
-	}
+  "name": "Yehoodie.com",
+  "version": "0.0.1",
+  "authors": [
+    "George Strakhov <george.strakhov@gmail.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.3",
+    "momentjs": "~2.5.0"
+  }
 }

@@ -11,7 +11,7 @@ module.exports = function(grunt) {
 		},
 		concat: {
 			dist: {
-				src: ['bower_components/jquery/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'app/js/*.js', '!app/js/main.js', '!app/js/built.min.js', 'app/js/main.js'],
+				src: ['bower_components/jquery/jquery.min.js', 'bower_components/bootstrap/dist/js/bootstrap.min.js', 'bower_components/momentjs/min/moment.min.js', 'app/js/*.js', '!app/js/main.js', '!app/js/built.min.js', 'app/js/main.js'],
 				dest: 'app/js/built.min.js'
 			}
 		},
@@ -53,7 +53,7 @@ module.exports = function(grunt) {
 			},
 			js: {
 				files: ['app/js/*.js', '!app/js/built.min.js'],
-				tasks: ['concat','uglify']
+				tasks: ['concat']
 			},
 			css: {
 				files: ['app/less/*.less'],
@@ -88,7 +88,7 @@ module.exports = function(grunt) {
 			},
 			buildAssets: {
 				cwd: 'app',
-				src: [ 'css/styles.min.css','js/built.min.js', 'img/png/**'],
+				src: [ 'css/styles.min.css','js/built.min.js', 'img/png/**', 'img/gif/**'],
 				dest: 'build',
 				expand: true
 			},
@@ -129,7 +129,7 @@ module.exports = function(grunt) {
 	grunt.registerTask(
 		'build',
 		'Clean up and copy only necessary files into the build directory',
-		[ 'inject:production', 'clean', 'copy:buildAssets', 'copy:copyProductionScripts','copy:buildHtml','copy:cname' ]
+		[ 'uglify', 'inject:production', 'clean', 'copy:buildAssets', 'copy:copyProductionScripts','copy:buildHtml','copy:cname' ]
 	);
 
 };

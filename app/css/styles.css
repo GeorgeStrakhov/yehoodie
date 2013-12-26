@@ -6037,7 +6037,12 @@ body {
   height: 100%;
 }
 body {
-  background-color: #084300;
+  background-color: #000000;
+  -webkit-transition: background-color 1000ms linear;
+  -moz-transition: background-color 1000ms linear;
+  -o-transition: background-color 1000ms linear;
+  -ms-transition: background-color 1000ms linear;
+  transition: background-color 1000ms linear;
   color: #333333;
   font-family: 'Lato', sans-serif;
   margin: 0;
@@ -6062,6 +6067,23 @@ body {
 }
 .allContainer a.noDots {
   border-bottom: 0;
+}
+.middleContainer {
+  position: relative;
+}
+#spinner {
+  height: 64px;
+  width: 64px;
+  background-image: url('../img/gif/spinner.gif');
+  margin: 0 auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+@media (min-width: 992px) {
+  #spinner {
+    margin-top: 50%;
+    margin-bottom: 0;
+  }
 }
 .sidebar {
   background-color: #000;
