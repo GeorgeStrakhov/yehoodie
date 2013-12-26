@@ -2,33 +2,68 @@
 function initJS() {
 	//get the last yehoodie
 	var yehoodie = Yehoodies[Yehoodies.length-1];
+	if(window.location.hash) {
+		var yslug = window.location.hash.split('#/')[1];
+		$.each(Yehoodies, function(){
+			if(this.slug == yslug) {
+				yehoodie = this;
+			}
+		});
+	}
+	loadYehoodie(yehoodie);
+}
+
+function loadYehoodie(yehoodie) {
+	clearInterval(countdown);
+	var timeData = getTimeData(yehoodie);
+	yehoodie.isActive = timeData.isActive;
+	yehoodie.timeLeft = timeData.timeLeft;
 	showCountdown(yehoodie);
 	showContent(yehoodie);
 }
 
-//show countdown
-function showCountdown(yehoodie) {
+function getTimeData(yehoodie) {
 	//calculate timezones and stuff, thanks moment.js
 	var now = moment();
+	var userZoneOffset = new Date().getTimezoneOffset();
+	now.zone(userZoneOffset);
 	var campaignFinish = moment(yehoodie.campaignFinish);
-	var zoneOffset = new Date().getTimezoneOffset();
-	campaignFinish.zone(zoneOffset);
-	// window.campaignFinish = campaignFinish;
+	campaignFinish.zone('-5'); //EST timezone, where teespring is
+
+	var isActive = !campaignFinish.isBefore(now);
+	var timeLeft = 0;
+
+	if(isActive) {
+		var secondsLeft = campaignFinish.diff(moment(), 'seconds');
+		timeLeft = moment.duration(secondsLeft, 'seconds');
+	}
+
+	return {
+		isActive: isActive,
+		timeLeft: timeLeft
+	};
+}
+
+function calculateTimeLeft(yehoodie) {
+
+}
+
+//show countdown
+function showCountdown(yehoodie) {
 
 	//if is gone
-	if(campaignFinish.isBefore(now)) {
-		$('#allCountdown').text('is gone forever.');
-		// $('.buyLink').fadeOut('slow');
+	if(!yehoodie.isActive) {
+		$('#allCountdown').html('is gone forever<span id="countdown"></span>.');
 		$('.buyLink').attr('href','mailto:yehoodie.com@gmail.com?subject=I+want+yehoodie+'+yehoodie.slug+'+edition+back!');
 		$('.buyLink').text('Ask for this Yehoodie to come back');
 		return;
 	}
 
 	//else
-	var countdown = setInterval(function(){
-		var secondsLeft = campaignFinish.diff(moment(), 'seconds');
-		var timeLeft = moment.duration(secondsLeft, 'seconds');
-		var timeLeftString = humanizeDuration(timeLeft);
+	$('#allCountdown').html('sales will end in <span id="countdown"></span>.');
+	window.countdown = setInterval(function(){
+		var timeData = getTimeData(yehoodie);
+		var timeLeftString = humanizeDuration(timeData.timeLeft);
 		$('#countdown').text(timeLeftString);
 	},1000);
 }
@@ -91,6 +126,11 @@ function showContent(yehoodie) {
 		//change name of edition and link
 		$('.yehoodieNameLink').attr('href', yehoodie.readMoreLink);
 		$('.yehoodieNameLink').text(yehoodie.name);
+		//change the buy link
+		if(yehoodie.isActive) {
+			$('.buyLink').attr('href', yehoodie.buyLink);
+			$('.buyLink').text('Buy this Hoodie');
+		}
 		$('.yehoodie-pic').fadeIn('slow');
 		//show sidebar
 		$('.sidebarRight').fadeIn('slow');
