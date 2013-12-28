@@ -1,3 +1,4 @@
+
 //import bootstrap
 
 @import "../../bower_components/bootstrap/less/bootstrap.less";
@@ -113,6 +114,34 @@ body {
 	}
 }
 
+//paginators
+.paginators {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 100%;
+	button {
+		-webkit-appearance: none;
+		background: transparent;
+		border: 0;
+		outline: 0;
+	}
+	.paginate {
+		display: none;
+		color: #fff;
+		i {
+			opactity: 0.3;
+		}
+		&.left {
+			position: absolute;
+			left: 10px;
+		}
+		&.right {
+			position: absolute;
+			right: 10px;
+		}
+	}
+}
 
 // bootstrap overrides
 .modal {

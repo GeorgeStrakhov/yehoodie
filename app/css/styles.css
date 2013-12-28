@@ -6149,6 +6149,33 @@ body {
 .btn-grey:hover {
   border-color: #EEE;
 }
+.paginators {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+}
+.paginators button {
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  outline: 0;
+}
+.paginators .paginate {
+  display: none;
+  color: #fff;
+}
+.paginators .paginate i {
+  opactity: 0.3;
+}
+.paginators .paginate.left {
+  position: absolute;
+  left: 10px;
+}
+.paginators .paginate.right {
+  position: absolute;
+  right: 10px;
+}
 .modal .modal-title {
   text-align: center;
   font-family: 'Lato', sans-serif;
