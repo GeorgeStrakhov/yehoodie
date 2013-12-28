@@ -26,7 +26,10 @@ function changeYehoodie(offset) {
 	var currentObj = getObjectByProperty(currentName, 'slug', Yehoodies);
 	var currentInd = getIndex(currentObj, Yehoodies);
 	if(Yehoodies[currentInd+offset]){
-		loadYehoodie(Yehoodies[currentInd+offset]);
+		$('.middleContainer').height($('.yehoodie-pic').height()); //hack to prevent jumping on mobile
+		$('.yehoodie-pic').fadeOut('slow', function(){
+			loadYehoodie(Yehoodies[currentInd+offset]);
+		});
 	}
 }
 
@@ -182,7 +185,9 @@ function showContent(yehoodie) {
 			$('.buyLink').attr('href', yehoodie.buyLink);
 			$('.buyLink').text('Buy this Hoodie');
 		}
-		$('.yehoodie-pic').fadeIn('slow');
+		$('.yehoodie-pic').fadeIn('slow', function(){
+			$('.middleContainer').height('auto');
+		});
 		//show sidebar
 		$('.sidebarRight').fadeIn('slow');
 
