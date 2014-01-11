@@ -20,5 +20,16 @@ var Yehoodies = [
 		"campaignStart": "12-27-2013 10:18:00",
 		"campaignFinish": "01-09-2014 21:00:00",
 		"wasSuccess": false
+	},
+	{
+		"name": "Marshall McLuhan",
+		"slug": "marshall-mcluhan",
+		"readMoreLink": "http://en.wikipedia.org/wiki/Marshall_McLuhan",
+		"bgColor": "#b7b7b7",
+		"price" : 42,
+		"buyLink": "http://teespring.com/yehooodie-hoodie-3",
+		"campaignStart": "01-11-2014 10:18:00",
+		"campaignFinish": "01-21-2014 20:00:00",
+		"wasSuccess": false
 	}
 ];
