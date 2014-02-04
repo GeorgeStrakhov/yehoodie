@@ -100,7 +100,7 @@ module.exports = function(grunt) {
 			},
 			buildHtml: {
 				cwd: 'app',
-				src: [ 'html/*' ],
+				src: [ '*.html' ],
 				dest: 'build',
 				expand: true,
 				flatten: true
