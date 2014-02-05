@@ -38,9 +38,9 @@ var Yehoodies = [
         "readMoreLink": "http://en.wikipedia.org/wiki/Jacques_Cousteau",
         "bgColor": "#262c50",
         "price": 42,
-        "buyLink": "http://teespring.com/yehoodie-hoodie-4",
+        "buyLink": "http://teespring.com/yehoodie-hoddie-4",
         "campaignStart": "02-04-2014 10:00:00",
-        "campaignFinish": "02-11-2014 05:00:00",
+        "campaignFinish": "02-12-2014 05:00:00",
         "wasSuccess": false
     }
 ];
