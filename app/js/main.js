@@ -34,7 +34,9 @@ function changeYehoodie(offset) {
 }
 
 function loadYehoodie(yehoodie) {
-	clearInterval(countdown);
+	if(countdown) {
+        clearInterval(countdown);
+    }
 	var timeData = getTimeData(yehoodie);
 	yehoodie.isActive = timeData.isActive;
 	yehoodie.timeLeft = timeData.timeLeft;
@@ -85,7 +87,7 @@ function getTimeData(yehoodie) {
 	var now = moment();
 	var userZoneOffset = new Date().getTimezoneOffset();
 	now.zone(userZoneOffset);
-	var campaignFinish = moment(yehoodie.campaignFinish);
+	var campaignFinish = moment(yehoodie.campaignFinish, 'MM-DD-YYYY hh:mm:ss');
 	campaignFinish.zone('-5'); //EST timezone, where teespring is
 
 	var isActive = !campaignFinish.isBefore(now);
@@ -104,7 +106,6 @@ function getTimeData(yehoodie) {
 
 //show countdown
 function showCountdown(yehoodie) {
-
 	//if is gone
 	if(!yehoodie.isActive) {
 		$('#allCountdown').html('is gone forever<span id="countdown"></span>.');
@@ -118,8 +119,9 @@ function showCountdown(yehoodie) {
 	window.countdown = setInterval(function(){
 		var timeData = getTimeData(yehoodie);
 		var timeLeftString = humanizeDuration(timeData.timeLeft);
-		$('#countdown').text(timeLeftString);
+		$('#allCountdown').find('#countdown').first().text(timeLeftString);
 	},1000);
+
 }
 
 function humanizeDuration(duration) {
@@ -192,7 +194,6 @@ function showContent(yehoodie) {
 		$('.sidebarRight').fadeIn('slow');
 
 	});
-
 
 }
 
