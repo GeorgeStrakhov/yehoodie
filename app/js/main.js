@@ -34,8 +34,8 @@ function changeYehoodie(offset) {
 }
 
 function loadYehoodie(yehoodie) {
-	if(countdown) {
-        clearInterval(countdown);
+	if(window.countdown) {
+        clearInterval(window.countdown);
     }
 	var timeData = getTimeData(yehoodie);
 	yehoodie.isActive = timeData.isActive;

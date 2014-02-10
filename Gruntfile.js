@@ -129,7 +129,7 @@ module.exports = function(grunt) {
 	grunt.registerTask(
 		'build',
 		'Clean up and copy only necessary files into the build directory',
-		[ 'uglify', 'inject:production', 'clean', 'copy:buildAssets', 'copy:copyProductionScripts','copy:buildHtml','copy:cname' ]
+		[ 'inject:production', 'clean', 'copy:buildAssets', 'copy:copyProductionScripts','copy:buildHtml','copy:cname' ]
 	);
 
 };
