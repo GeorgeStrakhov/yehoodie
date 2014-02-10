@@ -41,6 +41,6 @@ var Yehoodies = [
         "buyLink": "http://teespring.com/yehoodie-hoodie-4",
         "campaignStart": "02-04-2014 10:00:00",
         "campaignFinish": "02-12-2014 05:00:00",
-        "wasSuccess": false
+        "wasSuccess": true
     }
 ];
