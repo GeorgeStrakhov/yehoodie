@@ -185,7 +185,7 @@ function showContent(yehoodie) {
 		//change the buy link
 		if(yehoodie.isActive) {
 			$('.buyLink').attr('href', yehoodie.buyLink);
-			$('.buyLink').text('Buy this Hoodie');
+			$('.buyLink').text('Buy this '+yehoodie.type);
 		}
 		$('.yehoodie-pic').fadeIn('slow', function(){
 			$('.middleContainer').height('auto');

@@ -1,6 +1,7 @@
 var Yehoodies = [
 {
     "name": "Popeye",
+    "type": "hoodie",
     "slug": "popeye",
     "readMoreLink": "http://en.wikipedia.org/wiki/Popeye",
     "bgColor": "#084300",
@@ -12,6 +13,7 @@ var Yehoodies = [
 },
 {
     "name": "Yehudi Menuhin",
+    "type": "hoodie",
     "slug": "yehudi-menuhin",
     "readMoreLink": "http://en.wikipedia.org/wiki/Yehudi_Menuhin",
     "bgColor": "#382d21",
@@ -23,6 +25,7 @@ var Yehoodies = [
 },
 {
     "name": "Marshall McLuhan",
+    "type": "hoodie",
     "slug": "marshall-mcluhan",
     "readMoreLink": "http://en.wikipedia.org/wiki/Marshall_McLuhan",
     "bgColor": "#b7b7b7",
@@ -34,6 +37,7 @@ var Yehoodies = [
 },
 {
     "name": "Jacques-Yves Cousteau",
+    "type": "hoodie",
     "slug": "cousteau",
     "readMoreLink": "http://en.wikipedia.org/wiki/Jacques_Cousteau",
     "bgColor": "#262c50",
@@ -45,6 +49,7 @@ var Yehoodies = [
 },
 {
     "name": "Peter Pan",
+    "type": "hoodie",
     "slug": "peterpan",
     "readMoreLink": "http://en.wikipedia.org/wiki/Peter_Pan",
     "bgColor": "#1c3d28",
@@ -52,6 +57,18 @@ var Yehoodies = [
     "buyLink": "http://teespring.com/yehoodie-peterpan",
     "campaignStart": "02-11-2014 00:00:00",
     "campaignFinish": "02-25-2014 21:00:00",
+    "wasSuccess": true
+},
+{
+    "name": "Bucky Fuller",
+    "type": "t-shirt",
+    "slug": "fuller",
+    "readMoreLink": "http://en.wikipedia.org/wiki/Buckminster_Fuller",
+    "bgColor": "#fc5614",
+    "price": 24,
+    "buyLink": "http://teespring.com/yehoodie-fuller",
+    "campaignStart": "04-23-2014 00:00:00",
+    "campaignFinish": "05-07-2014 21:00:00",
     "wasSuccess": false
 }
 ];
